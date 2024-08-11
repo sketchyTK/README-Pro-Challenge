@@ -42,19 +42,58 @@ const promptUser = () => {
         //     type: 'list',
         //     message: 'Select your license',
         //     choices: ['HTML', 'CSS', 'JavaScript', 'PostgreSQL'],
-    
+        // },
+        // {
+        //     type: 'input',
+        //     message: 'Please enter your GitHub Username',
+        //     name: 'Username',
+        // },
+        // {
+        //     type: 'input',
+        //     message: 'Please enter your email address',
+        //     name: 'email',
         // },
         ])
 }
 // TODO: Create a function to write README file
 const generateREADME = ({ title, description }) =>
-    `# <${title}> 
+    `# <h3>${title}</h3> 
+
+## License Badge
 
 ## Description
 
 <${description}>
 
 ## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributions)
+- [Tests](#tests)
+- [Questions](#questions)
+- [License](#license)
+
+## Installation<a id="installation"></a>
+
+
+## Usage<a id="usage"></a>
+
+
+## Contributing <a id="contributions"></a>
+
+
+## Tests<a id="tests"></a>
+
+
+## Questions<a id="questions"></a>
+
+Here is a link to my Github Profile: <a href="#">URL Here</a>
+
+Here is my email address: <a href="mailto:#">Email Address Here</a>
+
+## License
+<a id="license"></a>
 `
 ;
 
