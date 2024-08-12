@@ -2,41 +2,70 @@
 // If there is no license, return an empty string
 
 function renderLicenseBadge(license) {
-  const licenseType = license[0]
-  let licenseShield = " "
-  if (licenseType === "Apache 2.0") {
-    licenseShield = '![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)'
+
+  let licenseShield = "";
+
+  if (license === "None") {
+    licenseShield = "";
   }
-  if (licenseType === "No License") {" "}
-  return licenseShield  
+    if (license === "MIT") {
+      licenseShield = "![License](https://img.shields.io/badge/License-MIT-yellow.svg)";
+    } 
+    if (license === "Apache 2.0") {
+      licenseShield = "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
+     } 
+     if (license === "GNU GPL v3") {
+    licenseShield = "![License](https://img.shields.io/badge/License-GPLv3-blue.svg)";
+  } 
+  
+  return licenseShield;  
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-// function renderLicenseLink(license) {
-//   const licenseLink = license[0]
-//   let shieldLink = " "
-//   if (licenseLink === "Apache 2.0") {
-//     shieldLink = 'https://opensource.org/licenses/Apache-2.0'
-//   }
-//   if (licenseLink === "No License") { " " }
-//   return shieldLink
-// }
+function renderLicenseLink(license) {
+  
+  let licenseLink;
+  switch(license) {
+    case "MIT":
+      licenseLink = "https://opensource.org/licenses/MIT";
+      break;
+    case "Apache 2.0":
+      licenseLink = "https://opensource.org/licenses/MIT";
+      break;
+    case "GNU GPL v3":
+      licenseLink = "https://opensource.org/licenses/gpl-3.0";
+      break;
+    default:
+      licenseLink = "";
+      break;
+  }
+
+  return licenseLink;
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  let licenseSection = "";
+
+  if (license != "None") {
+    licenseSection += "Please View " + renderLicenseLink(license) + " for more information on this license."
+  }
+  return licenseSection;
+
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  renderLicenseBadge()
+  // renderLicenseBadge()
   return `# ${data.title}
 
-## License Badge
-${data.licenseType}. ${licenseShield(data)}
+${renderLicenseBadge(data.license)}
+
 ## Description
 
-
+${data.description}
 
 ## Table of Contents
 
@@ -49,24 +78,28 @@ ${data.licenseType}. ${licenseShield(data)}
 
 ## Installation<a id="installation"></a>
 
+${data.installation}
 
 ## Usage<a id="usage"></a>
 
+${data.usage}
 
 ## Contributing <a id="contributions"></a>
 
+${data.contribution}
 
 ## Tests<a id="tests"></a>
 
+${data.test}
 
 ## Questions<a id="questions"></a>
 
-Here is a link to my Github Profile: <a href="#">URL Here</a>
+Here is a link to my Github Profile: <a href="https://github.com/${data.username}">${data.username}</a>
 
-Here is my email address: <a href="mailto:#">Email Address Here</a>
+Here is my email address: <a href="mailto:${data.email}">${data.email}</a>
 
 ## License
-<a id="license"></a>
+${renderLicenseSection(data.license)}
 `;
 }
 
