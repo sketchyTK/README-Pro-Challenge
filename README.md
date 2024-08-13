@@ -13,6 +13,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non nulla a orci 
 - [Contributing](#contributions)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Credits](#credits)
 - [License](#license)
 
 ## Installation<a id="installation"></a>
@@ -36,6 +37,16 @@ Nam a convallis nulla. Quisque id placerat elit, id finibus leo. Nulla aliquam v
 Here is a link to my Github Profile: <a href="https://github.com/blorbo">blorbo</a>
 
 Here is my email address: <a href="mailto:blorbo@obrolb.org">blorbo@obrolb.org</a>
+
+## Credits<a id="credits"></a>
+
+Code from Module 7 - NodeJS, Lesson 26, Student Advanced Inquirer (Solved) used to help with the then/writeFile portion of the inquirer code.
+
+License Badge Link, Sender and Section functions were based on Lisa Stillwell's README Project from 3 years ago. <a href="https://github.com/lstillwe/readme-generator/blob/main/utils/generateMarkdown.js">Readme Generator Markdown JS file</a>. I had to modify the code to work with the current version of Shields.io
+
+Also helped by Stack.Overflow user Heinz Ulrich's Question regarding adding a license badge (likely for the same project) <a href="https://stackoverflow.com/questions/77633251/adding-license-badges-to-generatemarkdown-js">node.js - Adding license badge to generateMarkdown.js</a>
+
+
 
 ## License
 Please View https://opensource.org/licenses/gpl-3.0 for more information on this license.
